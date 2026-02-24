@@ -42,6 +42,7 @@ async function captureAndPredict() {
 
 function showConfirm(label) {
   document.getElementById("confirmBox").style.display = "block";
+  document.getElementById("result").style.display = "block";
   document.getElementById("confirmText").innerText = `Is this ${label}?`;
 }
 
@@ -57,6 +58,7 @@ async function sendResult(confirmed) {
   });
 
   document.getElementById("confirmBox").style.display = "none";
+  document.getElementById("result").style.display = "none";
 }
 
 // Events

@@ -21,8 +21,8 @@ function servoCommand(label) {
       return;
   }
 
-  console.log("[SERVO] Opening bin door for 2s");
-  console.log("[SERVO] Returning to home position");
+  console.log("\n[SERVO] Opening bin door for 2s");
+  console.log("[SERVO] Returning to home position\n");
 }
 
 module.exports = servoCommand;
