@@ -39,9 +39,9 @@ User Confirmation
 Backend API
   ↓
 (1) Store in MongoDB
-(2) Trigger Servo Logic
+(2) Trigger Servo Logic (MQTT)
   ↓
-Simulated Mechanical Action
+Simulated Mechanical Action (MQTT)
 ```
 ### ML
 Using [Teachable Machine](https://teachablemachine.withgoogle.com/train/image) I developed an image identification model.
@@ -74,12 +74,15 @@ The database used to train it: [RealWaste](https://www.kaggle.com/datasets/joebe
 
 ## Extra Info
 **Vocab**
+
 ![teachablemachinevocab](/misc/tm_vocab.png)
 
 **Model Accuracy By Category/Class**
+
 ![accuracy](/misc/tm_accuracy.png)
 
 **More Info**
+
 ![perepoch](/misc/tm_accuracy-per-epoch.png)
 ![confusionmatrix](/misc/tm_confusion-matrix.png)
 ![lossperepoch](/misc/tm_loss-per-epoch.png)

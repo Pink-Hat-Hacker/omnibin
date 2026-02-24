@@ -4,6 +4,7 @@ const cors = require("cors");
 const path = require("path");
 const { MongoClient } = require("mongodb");
 const servoCommand = require("./servo");
+const graphDev = require("./graphs");
 
 const app = express();
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
