@@ -32,7 +32,7 @@ User
   ↓
 Webcam Capture
   ↓
-Local AI Model (classification)
+Local ML Model (classification)
   ↓
 User Confirmation
   ↓
@@ -67,6 +67,8 @@ The database used to train it: [RealWaste](https://www.kaggle.com/datasets/joebe
 
 ### Future
 - If incorrect, allow the user to input the actual classification
+- If incorrect, simulate the motor movement based on user input
+- Deploy on Vercel, convert from Express to serverless function
 - Create a loop to train the model from data stored in MongoDB
 - Run on raspberry pi with real servo motors that move the waste into specified bins
 
