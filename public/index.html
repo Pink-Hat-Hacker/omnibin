@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>OmniBin</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <img src="assets/logo.svg" alt="OmniBin Logo" />
+    </header>
+    
+
+    <div>
+      <video id="webcam" autoplay playsinline></video>
+      <canvas
+        id="snapshot"
+        width="224"
+        height="224"
+        style="display: none"
+      ></canvas>
+    </div>
+
+    <div>
+      <button id="captureBtn">Capture</button>
+    </div>
+
+    <div id="result"></div>
+
+    <div id="confirmBox" style="display: none">
+      <p id="confirmText"></p>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <footer>
+      <p>Developed by <a href="https://github.com/pink-hat-hacker" target="_blank">Zoë Valladares</a> & some LLM help ;)</p>
+    </footer>
+
+    <!-- TensorFlow + Teachable Machine -->
+    <script src="/libs/tf.min.js"></script>
+    <script src="/libs/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

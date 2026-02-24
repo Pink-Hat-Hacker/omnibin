@@ -1,5 +1,6 @@
 # omnibin
 DTI531 Midterm & Final Project. Waste Sorting Bin Web App
+
 ![omnibinLogo](/misc/logo.svg)
 
 ## What
