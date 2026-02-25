@@ -74,7 +74,9 @@ The database used to train it: [RealWaste](https://www.kaggle.com/datasets/joebe
 - Run on raspberry pi with real servo motors that move the waste into specified bins
 
 ## End-to-End Use
+![using](/misc/Using.png)
 
+![mqtt](/misc/mqtt.png)
 
 ## Extra Info
 **Initial System Diagram**
