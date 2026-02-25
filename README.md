@@ -8,6 +8,7 @@ Initially inspired by [PlasTell](https://www.matoha.com/plastics-identification)
 
 Instead, OmniBin, was developed as a play on the currently available [[Bin•E](https://www.bine.world/), [Ameru](https://www.ameru.ai/), and [CleanRobotics](https://www.waste360.com/fleet-technology/one-pittsburgh-based-tech-company-has-developed-a-self-sorting-trash-bin)] focusing on general waste sorting.
 
+This bin will be powered by a Raspberry Pi, with the addition of a camera and servo motor. The camera will automatically take a snapshot of the item in its resovoir, run the ML model and identify the item, prompt the user with the classification and their verification, and send the data to a database for future application.
 
 ## Why
 In the US many people don't sort waste correctly, not just because they don't care but because of confusion. 
@@ -32,14 +33,14 @@ User
   ↓
 Webcam Capture
   ↓
-Local ML Model (classification)
+Local ML Model (classification) [Teachable Machine Model via Tensorflow]
   ↓
-User Confirmation
+User Confirmation (user input)
   ↓
 Backend API
   ↓
-(1) Store in MongoDB
-(2) Trigger Servo Logic (MQTT)
+    -> (1) Store in MongoDB (POST Request)
+    -> (2) Trigger Servo Logic (MQTT)
   ↓
 Simulated Mechanical Action (MQTT)
 ```
@@ -72,7 +73,14 @@ The database used to train it: [RealWaste](https://www.kaggle.com/datasets/joebe
 - Create a loop to train the model from data stored in MongoDB
 - Run on raspberry pi with real servo motors that move the waste into specified bins
 
+## End-to-End Use
+
+
 ## Extra Info
+**Initial System Diagram**
+
+![systemdiagram](/misc/system.drawio.png)
+
 **Vocab**
 
 ![teachablemachinevocab](/misc/tm_vocab.png)
