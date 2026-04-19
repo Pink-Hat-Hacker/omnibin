@@ -1,0 +1,6 @@
+tflite-runtime
+adafruit-circuitpython-motorkit
+numpy
+pillow
+requests
+opencv-python

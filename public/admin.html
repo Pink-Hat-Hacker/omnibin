@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>OmniBin Admin</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1>OmniBin Admin Dashboard</h1>
+
+    <div id="summary">
+      <p>Total Classifications: <span id="total"></span></p>
+      <p>Overall Accuracy: <span id="accuracy"></span>%</p>
+    </div>
+
+    <section>
+      <h2>Bin Instances</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Bin ID</th>
+            <th>Total</th>
+            <th>Accuracy %</th>
+            <th>Top Category</th>
+          </tr>
+        </thead>
+        <tbody id="binTableBody"></tbody>
+      </table>
+    </section>
+
+    <canvas class="adminchart" id="accuracyChart"></canvas>
+    <canvas class="adminchart" id="volumeChart"></canvas>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
+

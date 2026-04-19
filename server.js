@@ -57,5 +57,22 @@ app.post("/classify", async (req, res) => {
   }
 });
 
+
+let latestEvent = null;
+
+app.post("/event", (req, res) => {
+  latestEvent = req.body;
+  console.log("New event:", latestEvent);
+  res.sendStatus(200);
+});
+
+app.get("/status", (req, res) => {
+  res.json({
+    online: true,
+    lastEvent: latestEvent
+  });
+});
+
+
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
