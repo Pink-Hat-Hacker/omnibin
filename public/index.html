@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniBin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">
+      <span class="logo-o">O</span>mniBin
+    </div>
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-tab="live">Live</button>
+      <button class="tab-btn" data-tab="admin">Admin</button>
+    </div>
+    <div class="nav-status">
+      <span id="pi-dot" class="dot offline"></span>
+      <span id="pi-status-label">Pi Offline</span>
+    </div>
+  </nav>
+
+  <!-- LIVE TAB -->
+  <div id="tab-live" class="tab-content active">
+    <div class="live-grid">
+
+      <div class="card camera-card">
+        <h3>Live Camera</h3>
+        <div class="stream-wrap">
+          <img id="camera-stream" src="/pi-stream" alt="Camera Feed"
+               onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'640\' height=\'480\'><rect width=\'640\' height=\'480\' fill=\'%23141414\'/><text x=\'50%25\' y=\'50%25\' fill=\'%23555\' text-anchor=\'middle\' font-size=\'18\' font-family=\'sans-serif\'>Camera Unavailable</text></svg>'" />
+          <div id="machine-status-badge" class="badge idle">IDLE</div>
+        </div>
+      </div>
+
+      <div class="card classify-card">
+        <h3>Current Classification</h3>
+        <div id="current-class" class="no-item">Waiting for item...</div>
+        <div id="confidence-bars" class="conf-bars"></div>
+        <div id="confirm-box" class="confirm-box hidden">
+          <p>Was this correct?</p>
+          <div class="confirm-btns">
+            <button id="yes-btn" class="btn green">&#10003; Yes</button>
+            <button id="no-btn" class="btn red">&#10007; No</button>
+          </div>
+          <div id="relabel-box" class="hidden">
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:6px">What was it actually?</p>
+            <select id="relabel-select">
+              <option value="Garbage">Garbage</option>
+              <option value="Plastic">Plastic</option>
+              <option value="Paper">Paper</option>
+              <option value="Metal">Metal</option>
+            </select>
+            <button id="relabel-submit" class="btn blue">Submit</button>
+          </div>
+        </div>
+        <div id="snapshot-wrap" class="snapshot-wrap hidden">
+          <img id="snapshot-img" src="" alt="Captured snapshot" />
+        </div>
+      </div>
+
+      <div class="card feed-card">
+        <h3>Recent Items</h3>
+        <ul id="live-feed" class="feed-list"></ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ADMIN TAB -->
+  <div id="tab-admin" class="tab-content hidden">
+    <div class="admin-grid">
+
+      <div class="card">
+        <h3>Devices</h3>
+        <div id="devices-list" class="devices-list"></div>
+        <label style="font-size:0.8rem;color:var(--muted);display:block;margin-top:1rem;margin-bottom:4px">Filter by device</label>
+        <select id="device-filter">
+          <option value="">All Devices</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <h3>Accuracy by Category</h3>
+        <div id="accuracy-table"></div>
+      </div>
+
+      <div class="card">
+        <h3>Activity (Last 24h)</h3>
+        <div id="timeline-chart" class="chart-wrap"></div>
+        <div class="chart-labels"></div>
+      </div>
+
+      <div class="card">
+        <h3>Category Breakdown</h3>
+        <div id="donut-chart" class="donut-wrap"></div>
+      </div>
+
+      <div class="card full-width">
+        <div class="table-header">
+          <h3>Classification History</h3>
+          <button id="refresh-history" class="btn blue small">Refresh</button>
+        </div>
+        <div class="table-scroll">
+          <table id="history-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Label</th>
+                <th>Confidence</th>
+                <th>Confirmed</th>
+                <th>Device</th>
+              </tr>
+            </thead>
+            <tbody id="history-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
