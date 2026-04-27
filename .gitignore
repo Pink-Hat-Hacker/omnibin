@@ -1,2 +1,12 @@
 .env*
 node_modules
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.db
+*.bak
+*.tmp
+.DS_Store

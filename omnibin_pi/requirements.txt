@@ -1,0 +1,12 @@
+adafruit-circuitpython-motorkit
+adafruit-blinka
+pymongo
+flask
+flask-socketio
+opencv-python-headless
+tflite-runtime
+Pillow
+python-dotenv
+eventlet
+numpy
+requests

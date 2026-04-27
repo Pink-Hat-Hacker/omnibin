@@ -1,0 +1,15 @@
+[Unit]
+Description=OmniBin
+After=network.target
+
+[Service]
+Type=simple
+User=dti
+WorkingDirectory=/home/dti/omnibin
+ExecStart=/home/dti/omnibin/venv/bin/python3 pi_main.py
+EnvironmentFile=/home/dti/omnibin/.env
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
